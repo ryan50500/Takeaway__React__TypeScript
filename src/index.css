@@ -6,7 +6,7 @@
 .images__flex img {
   flex-basis: 33.33%;
   max-width: 33.33%;
-  height: 420px;
+  height: 39vw;
   object-fit: cover;
 }
 
@@ -14,7 +14,6 @@
   .images__flex img {
     flex-basis: 50%;
     max-width: 50%;
-    height: 270px;
     object-fit: cover;
   }
 }

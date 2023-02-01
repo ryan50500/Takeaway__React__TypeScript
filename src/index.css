@@ -1,5 +1,20 @@
+.images__flex {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
 .images__flex img {
-  width: 300px;
-  height: 400px;
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+  height: 420px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .images__flex img {
+    flex-basis: 50%;
+    max-width: 50%;
+    height: 270px;
+    object-fit: cover;
+  }
 }

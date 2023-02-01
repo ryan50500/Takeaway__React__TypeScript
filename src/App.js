@@ -2,17 +2,14 @@ import React from 'react'
 import MyArray from './MyArray.js'
 import { useState } from "react";
 
-
-
-const Looping = () => {
+const App = () => {
 
         const handleTheClick = (e) => {
-            setColor("yellow")
-
-            if (e.target.className === 'steve') {
+            // setColor("yellow")
+            if (e.target.className === MyArray[0].name) {
                 console.log('its steve!');
+                }
             }
-        }
 
    const [color, setColor] = useState('green')
     return (
@@ -29,4 +26,4 @@ const Looping = () => {
     )
 }
 
-export default Looping
+export default App

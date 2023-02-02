@@ -4,7 +4,7 @@ import styles from './Modal.module.css'
 
 const Modal = ({modal, index}) => {
     return (
-        <div className={styles.modal + ' ' + (modal ? styles.visible : '')}>
+        <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>
                 <div className={styles.close__modal}>
                     <div className={styles.style__modal}>
                         <div className={styles.style__modal__cross}></div>

@@ -2,8 +2,7 @@ import React from 'react'
 import Images from './Images.js'
 import {useState} from 'react'
 
-const Display = ({modal, setModal}) => {
-    const [index, setIndex] = useState(0)
+const Display = ({modal, setModal, setIndex}) => {
     const handleClick = (id) => {
         setIndex(id)
         setModal(!modal)

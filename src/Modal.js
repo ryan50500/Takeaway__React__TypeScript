@@ -1,13 +1,13 @@
 import React from 'react'
+import ModalData from './ModalData.js'
 
-const Modal = ({modal}) => {
+const Modal = ({modal, index}) => {
     return (
         <div className={modal ? 'modal visible' : "modal invisible"}>
-            <h2>This will be our Modal</h2>
-            <h2>This will be our Modal</h2>
-            <h2>This will be our Modal</h2>
-            <h2>This will be our Modal</h2>
-            <h2>This will be our Modal</h2>
+                <div className="modal__info">
+                    <h2>{ModalData[index].name}</h2>
+                    <h2>{ModalData[index].age}</h2>
+                </div>
         </div>
     )
 }

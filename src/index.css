@@ -16,10 +16,11 @@
 }
 
 .modal {
+  z-index: -1;
   border: 2px solid white;
   background-color: white;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,6 +28,7 @@
   transition: opacity 1s;
 }
 .modal.visible {
+  z-index: 1;
   opacity: 1;
   transition: opacity 1s;
 }

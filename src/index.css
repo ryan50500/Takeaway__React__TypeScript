@@ -4,7 +4,6 @@
     cursor: pointer;
 }
 .images__flex .holder {
-  width: 100%;
   flex-basis: 33.33%;
   max-width: 33.33%;
   height: 40vw;
@@ -16,9 +15,15 @@
 }
 
 @media (max-width: 768px) {
-  .images__flex img {
+  .images__flex .holder {
     flex-basis: 50%;
     max-width: 50%;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .images__flex .holder {
+    height: 58vw;
   }
 }

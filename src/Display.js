@@ -4,12 +4,15 @@ import {useState} from 'react'
 
 const Display = () => {
     const [index, setIndex] = useState(0)
+    const handleClick = (id) => {
+        setIndex(id)
+    }
     return (
         <div className="images__flex">
            {Images.map((image) => {
                return (
                 <div key={image.id} className="holder">
-                    <img className={image.class} src={image.image} onClick={()=> setIndex(image.id)}/>
+                    <img className={image.class} src={image.image} onClick={()=>handleClick(image.id)}/>
                 </div>
                )
            })}

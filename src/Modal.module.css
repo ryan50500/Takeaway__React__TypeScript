@@ -23,6 +23,9 @@
     width: 27px;
     height: 32px;
   }
+  .close__modal:hover {
+      cursor: pointer;
+  }
   .style__modal {
     height: 35px;
     width: 2px;

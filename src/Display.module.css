@@ -4,7 +4,7 @@
     cursor: pointer;
     position: relative;
 }
-.images__flex .holder {
+.holder {
   position: relative;
   flex-basis: 33.33%;
   max-width: 33.33%;
@@ -54,5 +54,9 @@
   @media (max-width: 767px) {
     .images__flex .holder {
       height: 58vw;
+    }
+    #bhaji {
+        flex-basis: 100% !important;
+        max-width: 100% !important;
     }
   }

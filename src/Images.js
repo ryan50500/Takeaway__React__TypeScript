@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Images = [
     {image: 'https://ryan50500.github.io/takeaway/images/dansak.jpg', dishName: 'dansak', id: 0},

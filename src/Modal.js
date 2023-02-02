@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Modal = () => {
+const Modal = ({modal}) => {
     return (
-        <div>
-            This will be our Modal
+        <div className={modal ? 'modal visible' : "modal invisible"}>
+            <h2>This will be our Modal</h2>
+            <h2>This will be our Modal</h2>
+            <h2>This will be our Modal</h2>
+            <h2>This will be our Modal</h2>
+            <h2>This will be our Modal</h2>
         </div>
     )
 }

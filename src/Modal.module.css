@@ -1,0 +1,42 @@
+
+.modal {
+    z-index: -1;
+    border: 2px solid white;
+    background-color: white;
+    padding: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .visible {
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .close__modal {
+    position: fixed;
+    top: 9px;
+    right: 11px;
+    width: 27px;
+    height: 32px;
+  }
+  .style__modal {
+    height: 35px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    Z-index: 1;
+    background-color: black;
+  }
+  .style__modal__cross {
+    height: 35px;
+    width: 2px;
+    background-color: transparent;
+    transform: rotate(90deg);
+    Z-index: 2;
+    background-color: black;
+  }

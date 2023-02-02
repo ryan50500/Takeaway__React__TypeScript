@@ -29,9 +29,6 @@
   opacity: 0;
   z-index: -10;
 }
-
-
-
 .dish__name {
     color: black;
     position: absolute;
@@ -47,15 +44,15 @@
 }
 
 @media (max-width: 768px) {
-  .images__flex .holder {
-    flex-basis: 50%;
-    max-width: 50%;
-    object-fit: cover;
+    .images__flex .holder {
+      flex-basis: 50%;
+      max-width: 50%;
+      object-fit: cover;
+    }
   }
-}
-
-@media (max-width: 767px) {
-  .images__flex .holder {
-    height: 58vw;
+  
+  @media (max-width: 767px) {
+    .images__flex .holder {
+      height: 58vw;
+    }
   }
-}

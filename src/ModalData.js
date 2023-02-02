@@ -1,8 +1,13 @@
 const  ModalData = [
-      {name: 'paul', id: 0, age: 5},
-      {name: 'steve', id: 1, age: 3},
-      {name: 'ryan', id: 2, age: 7},
-      {name: 'tim', id: 8, age: 9}
+      {name: 'Dansak', description: 'A nice creamy Dansak'},
+      {name: 'Korma', description: 'A nice creamy Korma'},
+      {name: 'Biryani', description: 'A nice creamy Biryani'},
+      {name: 'Curry', description: 'A nice creamy Curry'},
+      {name: 'Rogan', description: 'A nice creamy Rogan'},
+      {name: 'Tikka', description: 'A nice creamy Tikka'},
+      {name: 'Naan', description: 'A nice creamy Naan'},
+      {name: 'Keema', description: 'A nice creamy Keema'},
+      {name: 'Bhaji', description: 'A nice creamy Bhaji'}
 ]
 
 export default ModalData;

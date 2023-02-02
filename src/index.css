@@ -5,6 +5,7 @@
     position: relative;
 }
 .images__flex .holder {
+  position: relative;
   flex-basis: 33.33%;
   max-width: 33.33%;
   height: 40vw;
@@ -14,7 +15,20 @@
   height: 100%;
   object-fit: cover;
 }
-
+.images__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: darkgrey;
+  opacity: 0.7;
+  z-index: 2;
+}
+.images__overlay.hide{
+  opacity: 0;
+  z-index: -10;
+}
 .modal {
   z-index: -1;
   border: 2px solid white;
@@ -28,9 +42,46 @@
   transition: opacity 1s;
 }
 .modal.visible {
-  z-index: 1;
+  z-index: 3;
   opacity: 1;
   transition: opacity 1s;
+}
+.close__modal {
+  position: fixed;
+  top: 9px;
+  right: 11px;
+  width: 27px;
+  height: 32px;
+}
+.style__modal {
+  height: 35px;
+  width: 2px;
+  margin-left: 12px;
+  background-color: transparent;
+  transform: rotate(45deg);
+  Z-index: 1;
+  background-color: black;
+}
+.style__modal__cross {
+  height: 35px;
+  width: 2px;
+  background-color: transparent;
+  transform: rotate(90deg);
+  Z-index: 2;
+  background-color: black;
+}
+.dish__name {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    font-size: 3.7rem;
+    font-weight: 600;
+    white-space: pre;
+    font-family: cursive;
+    text-shadow: 2px 2px darkorange;
 }
 
 @media (max-width: 768px) {

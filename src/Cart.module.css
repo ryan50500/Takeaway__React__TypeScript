@@ -1,0 +1,15 @@
+.cart__icon {
+    background-color: #fb6100;
+    padding: 11px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1;
+    right: 20px;
+    top: 15px;
+}
+.cart__icon svg {
+    position: relative;
+    top: 2px;
+    right: 1px;
+}

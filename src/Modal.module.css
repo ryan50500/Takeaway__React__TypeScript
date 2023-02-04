@@ -13,6 +13,7 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 1s;
+    border-radius: 10px;
   }
   .visible {
     z-index: 3;

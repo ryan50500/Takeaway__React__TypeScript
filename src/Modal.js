@@ -16,6 +16,8 @@ const Modal = ({modal, index, setModal}) => {
                 <div className={styles.modal__info}>
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
+                    <div className={styles.modal__quantity}><div>-</div><div>1</div><div>+</div></div>
+                    <h3 className={styles.modal__cart}>Add to order<span>{ModalData[index].price}</span></h3>
                 </div>
         </div>
     )

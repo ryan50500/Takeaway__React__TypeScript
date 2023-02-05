@@ -3,7 +3,7 @@ import styles from './Cart.module.css'
 import {useState} from 'react';
 
  const Cart = () => {
-    const [cartQuantity, setCartQuantity] = useState(1)
+    const [cartQuantity, setCartQuantity] = useState(0)
     return (
         <div>
             <div className={styles.cart__icon}>

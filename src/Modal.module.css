@@ -73,6 +73,11 @@
     color:black;
     font-size: 2rem;
   }
- 
+  .increase__amount:hover {
+    cursor: pointer
+  }
+  .decrease__amount:hover  {
+    cursor: pointer;
+  }
 
   

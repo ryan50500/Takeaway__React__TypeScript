@@ -4,7 +4,17 @@ import styles from './Modal.module.css'
 import {useState} from 'react';
 
 const Modal = ({modal, index, setModal}) => {
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(0);
+
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1)
+    }
+    const decreaseQuantity = () => {
+        if (quantity === 0) {
+            return;
+        }
+        setQuantity(quantity - 1)
+    }
     const closeModal = () => {
         setModal(false)
     }
@@ -18,7 +28,7 @@ const Modal = ({modal, index, setModal}) => {
                 <div className={styles.modal__info}>
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
-                    <div className={styles.modal__quantity}><div>-</div><div>{quantity}</div><div>+</div></div>
+                    <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
                     <h3 className={styles.modal__cart}>Add to order<span>{ModalData[index].price}</span></h3>
                 </div>
         </div>

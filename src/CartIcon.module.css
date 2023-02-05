@@ -8,6 +8,12 @@
     right: 20px;
     top: 15px;
 }
+.cart__icon:hover {
+    cursor: pointer;
+}
+.darker {
+    background-color:white;
+}
 .cart__icon svg {
     position: relative;
     top: 2px;

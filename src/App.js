@@ -1,17 +1,20 @@
 import Display from './Display';
 import Modal from './Modal';
-import Cart from './Cart';
+import CartIcon from './CartIcon';
+import CartPage from './CartPage';
 import {useState} from 'react';
 
 
 const App = () => {
-    const [modal, setModal] = useState(false)
-    const [index, setIndex] = useState(0)
+    const [modal, setModal] = useState(false);
+    const [index, setIndex] = useState(0);
+    const [CartIconClicked, setCartIconClicked] = useState(false);
+
     console.log('did it render?');
     return (
       <>
-        <Cart></Cart>
-        <Display setModal={setModal} modal={modal} setIndex={setIndex}/>
+        <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked}></CartIcon>
+        {CartIconClicked ? <CartPage></CartPage> : <Display setModal={setModal} modal={modal} setIndex={setIndex}/>}
         <Modal setModal={setModal} modal={modal} index={index}/>
       </>
     )

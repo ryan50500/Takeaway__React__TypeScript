@@ -3,7 +3,7 @@ import ModalData from './ModalData.js'
 import styles from './Modal.module.css'
 import {useState} from 'react';
 
-const Modal = ({modal, index, setModal}) => {
+const Modal = ({modal, index, setModal, CartItems, setCartItems}) => {
     const [quantity, setQuantity] = useState(0);
 
     const increaseQuantity = () => {
@@ -18,9 +18,10 @@ const Modal = ({modal, index, setModal}) => {
     const closeModal = () => {
         setModal(false)
     }
-    // will could store added products here
+
+    // will could store added products in the setCartItems() array
     const updateCart = () => {
-        console.log('added to cart is clicked')
+        setCartItems(oldArray => [...oldArray, ModalData[index].name]);
     }
     return (
         <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>

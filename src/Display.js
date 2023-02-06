@@ -2,11 +2,13 @@ import React from 'react'
 import Images from './Images.js'
 import styles from './Display.module.css'
 
-const Display = ({modal, setModal, setIndex}) => {
+// Use React Memo to stop re-render of component if nothing changes in props
+const Display = React.memo(({modal, setModal, setIndex}) => {
     const handleClick = (id) => {
         setIndex(id)
         setModal(!modal)
     }
+    console.log('display re-rendered');
     return (
         <>
         <div className={styles.images__flex}>
@@ -24,6 +26,6 @@ const Display = ({modal, setModal, setIndex}) => {
         <div className={styles.images__overlay + ' ' + (modal ? ' ' : styles.hide)}></div>
         </>
     )
-}
+});
 
 export default Display;

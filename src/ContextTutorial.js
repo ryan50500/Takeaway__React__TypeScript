@@ -13,7 +13,7 @@ function ContextTutorial(){
     const [TheIndex, SetTheIndex] = useState(0);
 
     return (
-        <AppContext.Provider value={{cartQuantity, setCartQuantity, CartIconClicked, setCartIconClicked, modal, setModal, TheIndex, SetTheIndex}}>
+        <AppContext.Provider value={{ 'hello', cartQuantity, setCartQuantity, CartIconClicked, setCartIconClicked, modal, setModal, TheIndex, SetTheIndex}}>
             <CartIcon/>
             <CartPage/> 
             <Display/> 

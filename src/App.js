@@ -13,8 +13,9 @@ const App = () => {
     console.log('did it render?');
     return (
       <>
-        <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked}></CartIcon>
-        {CartIconClicked ? <CartPage></CartPage> : <Display setModal={setModal} modal={modal} setIndex={setIndex}/>}
+        <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked}/>
+        <CartPage CartIconClicked={CartIconClicked}/> 
+        <Display setModal={setModal} modal={modal} setIndex={setIndex}/>
         <Modal setModal={setModal} modal={modal} index={index}/>
       </>
     )

@@ -9,6 +9,7 @@ const App = () => {
     const [modal, setModal] = useState(false);
     const [index, setIndex] = useState(0);
     const [CartIconClicked, setCartIconClicked] = useState(false);
+    // const [CartIconQuantity, setCartIconQuantity] = useState(0);
 
     console.log('did it render?');
     return (

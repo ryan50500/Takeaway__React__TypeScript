@@ -18,6 +18,10 @@ const Modal = ({modal, index, setModal}) => {
     const closeModal = () => {
         setModal(false)
     }
+    // will could store added products here
+    const updateCart = () => {
+        console.log('added to cart is clicked')
+    }
     return (
         <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>
                 <div className={styles.close__modal} onClick={() => closeModal()}>
@@ -29,7 +33,7 @@ const Modal = ({modal, index, setModal}) => {
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
                     <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
-                    <h3 className={styles.modal__cart}>Add to order<span>{ModalData[index].price}</span></h3>
+                    <h3 className={styles.modal__cart} onClick={()=>updateCart()}>Add to order<span>{ModalData[index].price}</span></h3>
                 </div>
         </div>
     )

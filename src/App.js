@@ -11,15 +11,24 @@ const App = () => {
     const [CartIconClicked, setCartIconClicked] = useState(false);
 
     // added takeaways will be added to this array
-    const [CartItems, setCartItems] = useState([]);
+    const [cart, setCart] = useState([]);
 
-    console.log(CartItems);
+    const addToCart = (takeaway, quantity) => {
+        // if item is already in cart, exit function
+        // if (cart.indexOf(takeaway) > 0) {
+        //     return;
+        // }
+        console.log(takeaway, quantity)
+        setCart([...cart, {takeaway, quantity}]);
+        console.log(cart);
+    }
+    
     return (
       <>
-        <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked}/>
+        <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
         <CartPage CartIconClicked={CartIconClicked}/> 
-        <Display setModal={setModal} modal={modal} setIndex={setIndex} CartItems={CartItems} setCartItems={setCartItems}/>
-        <Modal setModal={setModal} modal={modal} index={index} CartItems={CartItems} setCartItems={setCartItems}/>
+        <Display setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart}/>
+        <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>
     )
 }

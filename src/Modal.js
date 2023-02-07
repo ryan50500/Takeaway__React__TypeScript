@@ -3,14 +3,14 @@ import ModalData from './ModalData.js'
 import styles from './Modal.module.css'
 import {useState} from 'react';
 
-const Modal = ({modal, index, setModal, CartItems, setCartItems}) => {
-    const [quantity, setQuantity] = useState(0);
+const Modal = ({modal, index, setModal, addToCart}) => {
+    const [quantity, setQuantity] = useState(1);
 
     const increaseQuantity = () => {
         setQuantity(quantity + 1)
     }
     const decreaseQuantity = () => {
-        if (quantity === 0) {
+        if (quantity === 1) {
             return;
         }
         setQuantity(quantity - 1)
@@ -19,10 +19,6 @@ const Modal = ({modal, index, setModal, CartItems, setCartItems}) => {
         setModal(false)
     }
 
-    // will could store added products in the setCartItems() array
-    const updateCart = () => {
-        setCartItems(oldArray => [...oldArray, ModalData[index].name]);
-    }
     return (
         <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>
                 <div className={styles.close__modal} onClick={() => closeModal()}>
@@ -34,7 +30,7 @@ const Modal = ({modal, index, setModal, CartItems, setCartItems}) => {
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
                     <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
-                    <h3 className={styles.modal__cart} onClick={()=>updateCart()}>Add to order<span>{ModalData[index].price}</span></h3>
+                    <h3 className={styles.modal__cart} onClick={() => addToCart(ModalData[index].name, quantity)}>Add to order<span>{ModalData[index].price}</span></h3>
                 </div>
         </div>
     )

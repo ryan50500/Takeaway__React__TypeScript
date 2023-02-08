@@ -13,22 +13,26 @@ const App = () => {
     // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
 
+    
+
     const addToCart = (takeaway, quantity) => {
-        // if item is already in cart, exit function
+        // if item is already in cart, loop over cart...
         if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
             setCart(prevState => {
-                // Loop over your list
+                // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
                 return prevState.map((item) => {
-                    // Check for the item with the specified id and update it
+                    // find the object in Cart where 'takeaway' key (item.takeaway) is the same as takeaway passed in,
+                    // if so return that object with the updated quantity which is passed in
+                    // otherwise just return the item with  ": item"
                     return item.takeaway === takeaway ? {...item, quantity: quantity} : item
                 })
             })
-            console.log('its here')
+            console.log('item already in cart so update quantity')
             console.log(cart);
             return;
         }
+        // otherwise just add the takeaway and its quantity to the Cart
         else {
-            console.log(takeaway, quantity)
             setCart([...cart, {takeaway, quantity}]);
             console.log(cart);
     }

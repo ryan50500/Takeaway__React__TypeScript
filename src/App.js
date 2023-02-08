@@ -16,8 +16,18 @@ const App = () => {
     
 
     const addToCart = (takeaway, quantity) => {
-        // if item is already in cart, loop over cart...
-        if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
+
+        // (1st method) if item is already in cart, loop over cart 
+        // if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
+        
+         // (2nd method) if item is already in cart, loop over cart 
+        // const memberExists = cart.some(items => items.takeaway === takeaway);
+        // if(memberExists) {
+
+        // (3rd method) if item is already in cart, loop over cart 
+        let takeawayExists = cart.find(cartObjects => cartObjects.takeaway === takeaway);
+        if (takeawayExists) {
+            
             setCart(prevState => {
                 // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
                 return prevState.map((item) => {

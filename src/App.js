@@ -16,13 +16,15 @@ const App = () => {
     const addToCart = (takeaway, quantity) => {
         // if item is already in cart, exit function
         if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
+            console.log('its here')
             return;
         }
-        
-        console.log(takeaway, quantity)
-        setCart([...cart, {takeaway, quantity}]);
-        console.log(cart);
+        else {
+            console.log(takeaway, quantity)
+            setCart([...cart, {takeaway, quantity}]);
+            console.log(cart);
     }
+}
     
     return (
       <>
@@ -35,4 +37,3 @@ const App = () => {
 }
 
 export default App
-

@@ -16,7 +16,15 @@ const App = () => {
     const addToCart = (takeaway, quantity) => {
         // if item is already in cart, exit function
         if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
+            setCart(prevState => {
+                // Loop over your list
+                return prevState.map((item) => {
+                    // Check for the item with the specified id and update it
+                    return item.takeaway === takeaway ? {...item, quantity: quantity} : item
+                })
+            })
             console.log('its here')
+            console.log(cart);
             return;
         }
         else {
@@ -25,6 +33,10 @@ const App = () => {
             console.log(cart);
     }
 }
+
+
+
+
     
     return (
       <>

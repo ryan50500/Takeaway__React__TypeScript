@@ -9,22 +9,19 @@ const App = () => {
     const [modal, setModal] = useState(false);
     const [index, setIndex] = useState(0);
     const [CartIconClicked, setCartIconClicked] = useState(false);
-
     // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
 
     
-
     const addToCart = (takeaway, quantity) => {
-
-        // (1st method) if item is already in cart, loop over cart 
+        // (1st method) if item is already in cart...
         // if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
         
-         // (2nd method) if item is already in cart, loop over cart 
+         // (2nd method) if item is already in cart...
         // const memberExists = cart.some(items => items.takeaway === takeaway);
         // if(memberExists) {
 
-        // (3rd method) if item is already in cart, loop over cart 
+        // (3rd method) if item is already in cart... 
         let takeawayExists = cart.find(cartObjects => cartObjects.takeaway === takeaway);
         if (takeawayExists) {
             
@@ -47,11 +44,6 @@ const App = () => {
             console.log(cart);
     }
 }
-
-
-
-
-    
     return (
       <>
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>

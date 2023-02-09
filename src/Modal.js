@@ -4,6 +4,9 @@ import styles from './Modal.module.css'
 import {useState} from 'react';
 
 const Modal = ({modal, index, setModal, addToCart}) => {
+
+    console.log('the index is' + index);
+
     const [quantity, setQuantity] = useState(1);
 
     const increaseQuantity = () => {
@@ -17,6 +20,8 @@ const Modal = ({modal, index, setModal, addToCart}) => {
     }
     const closeModal = () => {
         setModal(false)
+        // when modal is closed by user, set the quantity back to 1
+        setQuantity(1);
     }
 
     return (
@@ -30,7 +35,7 @@ const Modal = ({modal, index, setModal, addToCart}) => {
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
                     <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
-                    <h3 className={styles.modal__cart} onClick={() => addToCart(ModalData[index].name, quantity)}>Add to order<span>{ModalData[index].price}</span></h3>
+                    <h3 className={styles.modal__cart} onClick={() => addToCart(ModalData[index].name, quantity)}>Add to order<span>£{(parseFloat(ModalData[index].price) * quantity).toFixed(2)}</span></h3>
                 </div>
         </div>
     )

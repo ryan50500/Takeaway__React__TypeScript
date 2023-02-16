@@ -1,7 +1,7 @@
-import Display from './Display';
-import Modal from './Modal';
-import CartIcon from './CartIcon';
-import CartPage from './CartPage';
+import Display from './components/Display';
+import Modal from './components/Modal';
+import CartIcon from './components/CartIcon';
+import CartPage from './components/CartPage';
 import {useState} from 'react';
 
 
@@ -30,7 +30,6 @@ const App = () => {
                     return item.takeaway === takeaway ? {...item, quantity: quantity, totalCost: totalCost} : item
                 })
             })
-            console.log('item already in cart so update quantity')
             console.log(cart);
             return;
         }

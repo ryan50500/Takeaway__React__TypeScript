@@ -1,7 +1,6 @@
 import React from 'react'
-import Images from './Images.js'
+import Images from '../Images.js'
 import styles from './Display.module.css'
-import ModalData from './ModalData.js'
 
 // Use React Memo to stop re-render of component if nothing changes in props
 const Display = React.memo(({modal, setModal, setIndex}) => {

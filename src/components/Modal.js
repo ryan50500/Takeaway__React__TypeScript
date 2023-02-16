@@ -1,5 +1,5 @@
 import React from 'react'
-import ModalData from './ModalData.js'
+import ModalData from '../../src/ModalData'
 import styles from './Modal.module.css'
 import {useState} from 'react';
 

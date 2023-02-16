@@ -21,7 +21,7 @@ const Modal = ({modal, index, setModal, addToCart}) => {
         // when modal is closed by user, set the quantity back to 1
         setQuantity(1);
     }
-
+    
     return (
         <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>
                 <div className={styles.close__modal} onClick={() => closeModal()}>
@@ -33,7 +33,16 @@ const Modal = ({modal, index, setModal, addToCart}) => {
                     <h2>{ModalData[index].name}</h2>
                     <h2>{ModalData[index].description}</h2>
                     <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
-                    <h3 className={styles.modal__cart} onClick={() => addToCart(ModalData[index].name, quantity, (parseFloat(ModalData[index].price) * quantity).toFixed(2) )}>Add to order<span>£{(parseFloat(ModalData[index].price) * quantity).toFixed(2)}</span></h3>
+                    <h3 className={styles.modal__cart} onClick={() => 
+                        // we pass in three arguments to the addToCart function... 
+                        // the name of the current index from ModalData array we import,
+                        // quantity from the  ModalData array,
+                        // price from the  ModalData array,
+                        // and takeaway image from the  ModalData array.
+                        addToCart(ModalData[index].name, quantity, (parseFloat(ModalData[index].price) * quantity).toFixed(2), ModalData[index].image)}>
+                        Add to order
+                        <span>£{(parseFloat(ModalData[index].price) * quantity).toFixed(2)}</span>
+                    </h3>
                 </div>
         </div>
     )

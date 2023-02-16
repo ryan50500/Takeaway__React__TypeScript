@@ -1,8 +1,9 @@
-.images__flex {
+.menu__images {
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
     position: relative;
+    overflow: unset;
 }
 .holder {
   position: relative;
@@ -10,7 +11,7 @@
   max-width: 33.33%;
   height: 40vw;
 }
-.images__flex img {
+.menu__images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -42,9 +43,12 @@
     font-family: cursive;
     text-shadow: 2px 2px darkorange;
 }
-
+.hide__overflow {
+  overflow: hidden;
+  position: fixed;
+}
 @media (max-width: 768px) {
-    .images__flex .holder {
+    .menu__images .holder {
       flex-basis: 50%;
       max-width: 50%;
       object-fit: cover;
@@ -52,7 +56,7 @@
   }
   
   @media (max-width: 767px) {
-    .images__flex .holder {
+    .menu__images .holder {
       height: 58vw;
     }
     #bhaji {

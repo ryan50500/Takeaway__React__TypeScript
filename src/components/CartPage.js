@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './CartPage.module.css'
-import {useState} from 'react';
 
 const CartPage = ({CartIconClicked, cart}) => {
     return (
@@ -12,7 +11,7 @@ const CartPage = ({CartIconClicked, cart}) => {
                         <div key={cartItems.takeaway}>
                             <h3>{cartItems.takeaway}</h3>
                             <h4>{cartItems.totalCost}</h4>
-                            {/* <img src={cartItems.image} alt="takeaway dish"/> */}
+                            <img className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
                         </div>
                     )
            })}

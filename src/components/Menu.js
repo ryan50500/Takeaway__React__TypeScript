@@ -1,9 +1,9 @@
 import React from 'react'
 import Images from '../Images.js'
-import styles from './Display.module.css'
+import styles from './Menu.module.css'
 
 // Use React Memo to stop re-render of component if nothing changes in props
-const Display = React.memo(({modal, setModal, setIndex}) => {
+const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}) => {
     const handleClick = (id) => {
         setIndex(id)
         setModal(!modal)
@@ -14,7 +14,7 @@ const Display = React.memo(({modal, setModal, setIndex}) => {
     }
     return (
         <>
-        <div className={styles.images__flex}>
+        <div className={styles.menu__images + ' ' + (CartIconClicked ? styles.hide__overflow : ' ')}>
            {Images.map((image) => {
                return (
                 // conditional styling - we check two things  1) the div that has 'bhaji' as the dishName value in the array (Images.map((image)) and 2) window.innerWidth is less than 600 
@@ -31,4 +31,4 @@ const Display = React.memo(({modal, setModal, setIndex}) => {
     )
 });
 
-export default Display;
+export default Menu;

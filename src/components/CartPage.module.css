@@ -3,6 +3,7 @@
     height: 100%;
     width: 100%;
     position: fixed;
+    overflow: scroll;
     top: 0;
     left: 0;
     z-index: 1;
@@ -13,4 +14,10 @@
 }
 .cursive {
     font-family: cursive;
+}
+.takeaway__image {
+    border-radius: 50%;
+    width: 190px;
+    height: 150px;
+    object-fit: cover;
 }

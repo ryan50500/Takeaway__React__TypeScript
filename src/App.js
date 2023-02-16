@@ -1,4 +1,4 @@
-import Display from './components/Display';
+import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
@@ -13,7 +13,7 @@ const App = () => {
     const [cart, setCart] = useState([]);
 
     
-    const addToCart = (takeaway, quantity, totalCost) => {
+    const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
         // (1st method) if item is already in cart...
         // if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
         
@@ -35,7 +35,7 @@ const App = () => {
         }
         // otherwise just add the takeaway and its quantity to the Cart
         else {
-            setCart([...cart, {takeaway, quantity, totalCost}]);
+            setCart([...cart, {takeaway, quantity, totalCost, takeawayImage}]);
             console.log(cart);
     }
 }
@@ -43,7 +43,7 @@ const App = () => {
       <>
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
         <CartPage CartIconClicked={CartIconClicked} cart={cart}/> 
-        <Display setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart}/>
+        <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>
     )

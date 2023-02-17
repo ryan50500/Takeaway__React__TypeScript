@@ -12,6 +12,8 @@ const App = () => {
     const [CartIconClicked, setCartIconClicked] = useState(false);
     // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
+    // total cost on cart page
+    const [cartTotal, setCartTotal] = useState(0);
 
     
     const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
@@ -32,18 +34,24 @@ const App = () => {
                 })
             })
             console.log(cart);
-            return;
         }
         // otherwise just add the takeaway and its quantity to the Cart
         else {
             setCart([...cart, {takeaway, quantity, totalCost, takeawayImage}]);
             console.log(cart);
+        }
+
+            // showing the total cost on cart page
+            // totalForCart = cart.reduce((sum, item) => sum + item.totalCost, 0);
+            // totalAsInteger = parseInt(totalForCart);
+            // setCartTotal(totalAsInteger);
+
     }
-}
+
     return (
       <>
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
-        <CartPage CartIconClicked={CartIconClicked} cart={cart}/> 
+        <CartPage CartIconClicked={CartIconClicked} cart={cart} cartTotal={cartTotal}/> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>

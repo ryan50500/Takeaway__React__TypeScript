@@ -13,7 +13,7 @@ const App = () => {
     // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
     // total cost on cart page
-    const [cartTotal, setCartTotal] = useState(0);
+    // const [cartTotal, setCartTotal] = useState(0);
 
     
     const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
@@ -47,7 +47,7 @@ const App = () => {
     return (
       <>
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
-        <CartPage CartIconClicked={CartIconClicked} cart={cart} cartTotal={cartTotal} setCartTotal={setCartTotal}/> 
+        <CartPage CartIconClicked={CartIconClicked} cart={cart}/> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>

@@ -1,13 +1,20 @@
 import React from 'react'
 import styles from './CartPage.module.css'
+import {useState, useEffect} from 'react';
 
-const CartPage = ({CartIconClicked, cart, cartTotal, setCartTotal}) => {
-    console.log('did this re-render on CART PAGE?')
-         // showing the total cost on cart page
-         let totalForCart = cart.reduce((sum, item) => sum + parseInt(item.totalCost), 0);
-        //  console.log(totalForCart);
-         setCartTotal(totalForCart);
-         console.log(cartTotal);
+const CartPage = ({CartIconClicked, cart}) => {
+    
+    const [cartTotal, setCartTotal] = useState(0);
+
+        useEffect(() => {
+                // showing the total cost on cart page
+                let totalForCart = cart.reduce((sum, item) => sum + parseInt(item.totalCost), 0);
+                //  console.log(totalForCart);
+                setCartTotal(totalForCart);
+                console.log(cartTotal);
+                console.log('use effect has run')
+        }, [cart])
+
     return (
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
                 <h2>Total Cost:£{cartTotal}</h2>

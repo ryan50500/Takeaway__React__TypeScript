@@ -8,9 +8,10 @@ const CartPage = ({CartIconClicked, cart}) => {
 
         useEffect(() => {
                 // showing the total cost on cart page
-                let totalForCart = cart.reduce((sum, item) => sum + parseInt(item.totalCost), 0);
-                //  console.log(totalForCart);
-                setCartTotal(totalForCart);
+                let totalForCart = cart.reduce((sum, item) => sum + item.totalCost, 0);
+               
+                let newTotalForCart = totalForCart.toFixed(2)
+                setCartTotal(newTotalForCart);
                 console.log(cartTotal);
                 console.log('use effect has run')
         }, [cart])

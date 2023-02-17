@@ -2,6 +2,7 @@ import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
+import mainStyles from './index.css';
 import {useState} from 'react';
 
 

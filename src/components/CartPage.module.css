@@ -1,3 +1,6 @@
+.cart__page * {
+    color: #f36805;
+}
 .show {
     display: block;
     height: 100%;
@@ -11,9 +14,6 @@
 }
 .hide {
     display: none;
-}
-.cursive {
-    font-family: cursive;
 }
 .takeaway__image {
     border-radius: 50%;

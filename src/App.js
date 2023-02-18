@@ -2,6 +2,7 @@ import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
+import AmendTakeaway from './components/AmendTakeaway';
 import mainStyles from './index.css';
 import {useState} from 'react';
 
@@ -12,6 +13,8 @@ const App = () => {
     const [CartIconClicked, setCartIconClicked] = useState(false);
     // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
+    // the modal to edit takeaway quantity
+    const [amendTakeaway, setAmendTakeaway] = useState(false);
     
     
     const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
@@ -44,8 +47,9 @@ const App = () => {
 
     return (
       <>
+        {amendTakeaway && <AmendTakeaway/>}
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
-        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart}/> 
+        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart} amendTakeaway={amendTakeaway} setAmendTakeaway={setAmendTakeaway}/> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>

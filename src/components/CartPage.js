@@ -2,19 +2,23 @@ import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
 
-const CartPage = ({CartIconClicked, cart}) => {
+const CartPage = ({CartIconClicked, cart, setCart}) => {
     
     const [cartTotal, setCartTotal] = useState(0);
 
         useEffect(() => {
                 // showing the total cost on cart page
                 let totalForCart = cart.reduce((sum, item) => sum + item.totalCost, 0);
-               
                 let newTotalForCart = totalForCart.toFixed(2)
                 setCartTotal(newTotalForCart);
-                console.log(cartTotal);
-                console.log('use effect has run')
         }, [cart])
+
+
+        const removeFromCart = (takeaway) => {
+            const newCart = cart.filter(cartItem => cartItem.takeaway !== takeaway);
+            setCart(newCart);
+        }
+  
 
     return (
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
@@ -27,6 +31,7 @@ const CartPage = ({CartIconClicked, cart}) => {
                             <h3>{cartItems.takeaway}</h3>
                             <h4>Quantity: {cartItems.quantity}</h4>
                             <img className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
+                            <button onClick={()=>removeFromCart(cartItems.takeaway)}>remove from cart</button>
                         </div>
                     )
                  })}

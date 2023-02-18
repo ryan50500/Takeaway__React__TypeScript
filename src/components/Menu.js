@@ -5,7 +5,6 @@ import styles from './Menu.module.css'
 // Use React Memo to stop re-render of component if nothing changes in props
 const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}) => {
     const openModal = (id) => {
-        console.log('menu clicked')
         setIndex(id)
         setModal(!modal)
     }

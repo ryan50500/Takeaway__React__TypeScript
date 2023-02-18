@@ -21,8 +21,8 @@ const CartPage = ({CartIconClicked, cart, setCart}) => {
         }
 
         // Amend order of takeaway
-        const amendOrder = () => {
-            console.log('afaafdfsd')
+        const amendOrder = (takeaway) => {
+            console.log(takeaway)
             setAmendTakeaway(!amendTakeaway);
             // setCart(prevState => {
             //     // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
@@ -47,7 +47,7 @@ const CartPage = ({CartIconClicked, cart, setCart}) => {
                         <div key={index} className={styles.takeaway__wrapper}>
                             <h3>{cartItems.takeaway}</h3>
                             <h4>Quantity: {cartItems.quantity}</h4>
-                            <img onClick={amendOrder} className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
+                            <img onClick={() => amendOrder(cartItems.takeaway)} className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
                             <button onClick={()=>removeFromCart(cartItems.takeaway)}>remove from cart</button>
                         </div>
                     )

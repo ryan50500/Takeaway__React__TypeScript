@@ -2,7 +2,6 @@ import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
-import AmendTakeaway from './components/AmendTakeaway';
 import mainStyles from './index.css';
 import {useState} from 'react';
 
@@ -11,17 +10,11 @@ const App = () => {
     const [modal, setModal] = useState(false);
     const [index, setIndex] = useState(0);
     const [CartIconClicked, setCartIconClicked] = useState(false);
-    // added takeaways will be added to this array
     const [cart, setCart] = useState([]);
-    // the modal to edit takeaway quantity
-    const [amendTakeaway, setAmendTakeaway] = useState(false);
-    
+
     
     const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
-        // (1st method) if item is already in cart...
-        // if (cart.filter(cartObjects => cartObjects.takeaway === takeaway).length > 0) {
-        
-        // (2rd method) if item is already in cart... 
+        // if item is already in cart... 
         let takeawayExists = cart.find(cartObjects => cartObjects.takeaway === takeaway);
         if (takeawayExists) {
             
@@ -47,9 +40,8 @@ const App = () => {
 
     return (
       <>
-        {amendTakeaway && <AmendTakeaway/>}
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
-        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart} amendTakeaway={amendTakeaway} setAmendTakeaway={setAmendTakeaway}/> 
+        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart}/> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>

@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
+import AmendTakeaway from './AmendTakeaway';
 
-const CartPage = ({CartIconClicked, cart, setCart, amendTakeaway, setAmendTakeaway}) => {
+const CartPage = ({CartIconClicked, cart, setCart}) => {
     
-    const [cartTotal, setCartTotal] = useState(0);
+        const [cartTotal, setCartTotal] = useState(0);
+        const [amendTakeaway, setAmendTakeaway] = useState(false);
 
         useEffect(() => {
                 // showing the total cost on cart page
@@ -32,8 +34,10 @@ const CartPage = ({CartIconClicked, cart, setCart, amendTakeaway, setAmendTakeaw
             //     })
             // })
         }
-  
+
     return (
+        <>
+        {amendTakeaway && <AmendTakeaway/>}
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
                 <h2>Total Cost:£{cartTotal}</h2>
                 <h2>My Orders</h2>
@@ -50,6 +54,7 @@ const CartPage = ({CartIconClicked, cart, setCart, amendTakeaway, setAmendTakeaw
                  })}
            </div>
         </div>
+        </>
     )
 }
 

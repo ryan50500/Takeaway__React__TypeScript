@@ -14,3 +14,17 @@
     background-color: wheat;
     border-radius: 20px;
 }
+.open h2 {
+    display: block;
+    color: black;
+    position: relative;
+    z-index: 11;
+} 
+.quantity__buttons {
+    display: flex;
+    width: 94px;
+    justify-content: space-between;
+}
+.quantity__buttons div {
+    font-size: 3rem;
+}

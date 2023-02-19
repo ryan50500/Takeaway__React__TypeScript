@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
 
-const CartPage = ({CartIconClicked, cart, setCart, amendOrder, amendTakeaway, setAmendTakeaway}) => {
+const CartPage = ({CartIconClicked, cart, setCart}) => {
     
         const [cartTotal, setCartTotal] = useState(0);
 
@@ -18,6 +18,10 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder, amendTakeaway, se
             setCart(newCart);
         }
 
+        const amendOrder = () => {
+           
+        }
+
     return (
         <>
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
@@ -29,7 +33,7 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder, amendTakeaway, se
                         <div key={index} className={styles.takeaway__wrapper}>
                             <h3>{cartItems.takeaway}</h3>
                             <h4>Quantity: {cartItems.quantity}</h4>
-                            <img onClick={() => amendOrder(cartItems.takeaway)} className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
+                            <img onClick={amendOrder} className={styles.takeaway__image} src={cartItems.takeawayImage} alt="takeaway dish"/>
                             <button onClick={()=>removeFromCart(cartItems.takeaway)}>remove from cart</button>
                         </div>
                     )

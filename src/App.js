@@ -2,6 +2,7 @@ import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
+import AmendTakeaway from './components/AmendTakeaway';
 import mainStyles from './index.css';
 import {useState} from 'react';
 
@@ -11,7 +12,8 @@ const App = () => {
     const [index, setIndex] = useState(0);
     const [CartIconClicked, setCartIconClicked] = useState(false);
     const [cart, setCart] = useState([]);
-
+    const [amendTakeaway, setAmendTakeaway] = useState(false);
+    const [takeawayClickedInCart, setTakeawayClickedInCart] = useState(0);
     
     const addToCart = (takeaway, quantity, totalCost, takeawayImage) => {
         // if item is already in cart... 
@@ -36,12 +38,24 @@ const App = () => {
         }
     }
 
+        // Amend order of takeaway
+        // looping through cart items and getting 'takeaway' from object of THAT item
+        const amendOrder = (takeawayClicked) => {
+            // console.log(takeawayClicked)
+            setAmendTakeaway(!amendTakeaway);
+            // get matching takeaway that is passed in and loop through cart
+             let takeawayClickedInCart = cart.find(cartObjects => cartObjects.takeaway === takeawayClicked);
+            //  console.log(takeawayClickedInCart);
+            setTakeawayClickedInCart(takeawayClickedInCart);
+        }
+
     console.log('did this re-render?')
 
     return (
       <>
+        {amendTakeaway && <AmendTakeaway takeawayClickedInCart={takeawayClickedInCart}/>}
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
-        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart}/> 
+        <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart} amendOrder={amendOrder} amendTakeaway={amendTakeaway} setAmendTakeaway={setAmendTakeaway} /> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>
         <Modal setModal={setModal} modal={modal} index={index} cart={cart} setCart={setCart} addToCart={addToCart}/>
       </>

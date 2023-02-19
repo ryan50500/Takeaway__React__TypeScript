@@ -1,12 +1,10 @@
 import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
-import AmendTakeaway from './AmendTakeaway';
 
-const CartPage = ({CartIconClicked, cart, setCart}) => {
+const CartPage = ({CartIconClicked, cart, setCart, amendOrder, amendTakeaway, setAmendTakeaway}) => {
     
         const [cartTotal, setCartTotal] = useState(0);
-        const [amendTakeaway, setAmendTakeaway] = useState(false);
 
         useEffect(() => {
                 // showing the total cost on cart page
@@ -20,24 +18,8 @@ const CartPage = ({CartIconClicked, cart, setCart}) => {
             setCart(newCart);
         }
 
-        // Amend order of takeaway
-        const amendOrder = (takeaway) => {
-            console.log(takeaway)
-            setAmendTakeaway(!amendTakeaway);
-            // setCart(prevState => {
-            //     // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
-            //     return prevState.map((item) => {
-            //         // find the object in Cart where 'takeaway' key (item.takeaway) is the same as takeaway passed in,
-            //         // if so return that object with the updated quantity and totalCost which is passed in
-            //         // otherwise just return the item with  ": item"
-            //         return item.takeaway === takeaway ? {...item, quantity: quantity, totalCost: totalCost} : item
-            //     })
-            // })
-        }
-
     return (
         <>
-        {amendTakeaway && <AmendTakeaway/>}
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
                 <h2>Total Cost:£{cartTotal}</h2>
                 <h2>My Orders</h2>

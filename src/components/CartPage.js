@@ -7,7 +7,6 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder}) => {
         const [cartTotal, setCartTotal] = useState(0);
 
         useEffect(() => {
-            console.log("does it??")
                 // showing the total cost on cart page
                 let totalForCart = cart.reduce((sum, item) => sum + item.totalCost, 0);
                 let newTotalForCart = totalForCart.toFixed(2)

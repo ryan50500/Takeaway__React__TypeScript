@@ -39,7 +39,7 @@ const Modal = ({modal, index, setModal, addToCart}) => {
                         // quantity from the  ModalData array,
                         // price from the  ModalData array,
                         // and takeaway image from the  ModalData array.
-                        addToCart(ModalData[index].name, quantity, ModalData[index].price * quantity, ModalData[index].image)}>
+                        addToCart(ModalData[index].name, quantity, ModalData[index].price * quantity, ModalData[index].image, ModalData[index].price)}>
                         Add to order
                         <span>£{(parseFloat(ModalData[index].price) * quantity).toFixed(2)}</span>
                     </h3>

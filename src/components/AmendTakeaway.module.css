@@ -11,7 +11,7 @@
     height: 200px;
     width: 200px;
     text-align: center;
-    background-color: wheat;
+    background-color: #fb6100;
     border-radius: 20px;
 }
 .open h2 {
@@ -19,12 +19,65 @@
     color: black;
     position: relative;
     z-index: 11;
+    margin: 0;
 } 
+.cross {
+    z-index: 11;
+}
 .quantity__buttons {
     display: flex;
     width: 94px;
     justify-content: space-between;
 }
 .quantity__buttons div {
-    font-size: 3rem;
+    font-size: 3.7rem;
 }
+.quantity__buttons div:hover {
+    cursor: pointer;
+}
+
+
+
+
+.modal {
+    z-index: 11;
+    padding: 2rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border-radius: 10px;
+  }
+  .close__modal {
+    position: fixed;
+    top: 9px;
+    right: 11px;
+    width: 27px;
+    height: 32px;
+  }
+  .close__modal:hover {
+      cursor: pointer;
+  }
+  .style__modal {
+    height: 35px;
+    width: 3px;
+    margin-left: 12px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    Z-index: 1;
+    background-color: black;
+  }
+  .style__modal__cross {
+    height: 35px;
+    width: 3px;
+    background-color: transparent;
+    transform: rotate(90deg);
+    Z-index: 2;
+    background-color: black;
+  }
+
+
+  @media (max-width: 767px){
+    .open {
+        top: 35%;
+    }
+  }

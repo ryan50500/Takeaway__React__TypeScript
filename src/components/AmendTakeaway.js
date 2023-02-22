@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './AmendTakeaway.module.css'
 import {useState, useEffect} from 'react'
 
-const AmendTakeaway = ({takeawayClickedInCart, cart, setCart}) => {
+const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, setAmendTakeaway}) => {
 
     // quantity of current dish
     const [dishQuantity, setDishQuantity] = useState(takeawayClickedInCart.quantity)
@@ -46,6 +46,9 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart}) => {
 
 
     const decreaseQuantity = () => {
+        if (dishQuantity === 1) {
+            return;
+        }
         setDishQuantity(dishQuantity - 1)
     }
 
@@ -53,13 +56,21 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart}) => {
     return (
         <>
             <div className={styles.open}>
+                {/* modal cross */}
+                <div className={styles.modal}>
+                    <div className={styles.close__modal} onClick={()=>setAmendTakeaway(!amendTakeaway)}>
+                        <div className={styles.style__modal}>
+                            <div className={styles.style__modal__cross}></div>
+                        </div>
+                    </div>
+                </div>
                 <h2>{takeawayClickedInCart.takeaway}</h2>
-                <div className={styles.open}>
+                {/* <div className={styles.open}> */}
                     <div className={styles.quantity__buttons}>
                         <div onClick={()=>decreaseQuantity()}>-</div>
                         <div onClick={()=>increaseQuantity(dishName, dishQuantity, dishTotal, dishPrice)}>+</div>
                     </div>
-                </div>
+                {/* </div> */}
                 <h2>{dishQuantity}</h2>
             </div>
         </>

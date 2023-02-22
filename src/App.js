@@ -53,7 +53,7 @@ const App = () => {
 
     return (
       <>
-        {amendTakeaway && <AmendTakeaway takeawayClickedInCart={takeawayClickedInCart} cart={cart} setCart={setCart}/>}
+        {amendTakeaway && <AmendTakeaway takeawayClickedInCart={takeawayClickedInCart} cart={cart} setCart={setCart} amendTakeaway={amendTakeaway} setAmendTakeaway={setAmendTakeaway}/>}
         <CartIcon CartIconClicked={CartIconClicked} setCartIconClicked={setCartIconClicked} cart={cart}/>
         <CartPage CartIconClicked={CartIconClicked} cart={cart} setCart={setCart} amendOrder={amendOrder} amendTakeaway={amendTakeaway} setAmendTakeaway={setAmendTakeaway} /> 
         <Menu setModal={setModal} modal={modal} setIndex={setIndex} cart={cart} setCart={setCart} CartIconClicked={CartIconClicked}/>

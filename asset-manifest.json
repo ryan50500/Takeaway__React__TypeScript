@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Takeaway__React/static/css/main.1af4c3de.css",
+    "main.js": "/Takeaway__React/static/js/main.be77155e.js",
+    "index.html": "/Takeaway__React/index.html",
+    "main.1af4c3de.css.map": "/Takeaway__React/static/css/main.1af4c3de.css.map",
+    "main.be77155e.js.map": "/Takeaway__React/static/js/main.be77155e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1af4c3de.css",
+    "static/js/main.be77155e.js"
+  ]
+}

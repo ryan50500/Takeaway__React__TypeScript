@@ -49,7 +49,6 @@ const App = () => {
             setTakeawayClickedInCart(takeawayClickedInCart);
         }
 
-    console.log('did this re-render?')
 
     return (
       <>

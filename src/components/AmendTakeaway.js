@@ -29,7 +29,6 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, set
      
 
     const amendQuantity = (dishName, dishQuantity, dishTotal, dishPrice) => {
-        console.log('three')
         // somehow we need to wait for setDishQuantity state to update before running
         // setCart(prevState => { below
 
@@ -65,12 +64,10 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, set
                     </div>
                 </div>
                 <h2>{takeawayClickedInCart.takeaway}</h2>
-                {/* <div className={styles.open}> */}
                     <div className={styles.quantity__buttons}>
                         <div onClick={()=>decreaseQuantity()}>-</div>
                         <div onClick={()=>increaseQuantity(dishName, dishQuantity, dishTotal, dishPrice)}>+</div>
                     </div>
-                {/* </div> */}
                 <h2>{dishQuantity}</h2>
             </div>
         </>

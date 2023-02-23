@@ -66,7 +66,7 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, set
                 <h2>{takeawayClickedInCart.takeaway}</h2>
                     <div className={styles.quantity__buttons}>
                         <div onClick={()=>decreaseQuantity()}>-</div>
-                        <div onClick={()=>increaseQuantity(dishName, dishQuantity, dishTotal, dishPrice)}>+</div>
+                        <div onClick={()=>increaseQuantity()}>+</div>
                     </div>
                 <h2>{dishQuantity}</h2>
             </div>

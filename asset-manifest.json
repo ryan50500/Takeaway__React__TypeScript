@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Takeaway__React/static/css/main.1af4c3de.css",
-    "main.js": "/Takeaway__React/static/js/main.d262cff1.js",
-    "index.html": "/Takeaway__React/index.html",
-    "main.1af4c3de.css.map": "/Takeaway__React/static/css/main.1af4c3de.css.map",
-    "main.d262cff1.js.map": "/Takeaway__React/static/js/main.d262cff1.js.map"
+    "main.css": "/Takeaway__React__TypeScript/static/css/main.27b711e8.css",
+    "main.js": "/Takeaway__React__TypeScript/static/js/main.1375da63.js",
+    "index.html": "/Takeaway__React__TypeScript/index.html",
+    "main.27b711e8.css.map": "/Takeaway__React__TypeScript/static/css/main.27b711e8.css.map",
+    "main.1375da63.js.map": "/Takeaway__React__TypeScript/static/js/main.1375da63.js.map"
   },
   "entrypoints": [
-    "static/css/main.1af4c3de.css",
-    "static/js/main.d262cff1.js"
+    "static/css/main.27b711e8.css",
+    "static/js/main.1375da63.js"
   ]
 }

@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from './CartIcon.module.css'
 
+interface CartIconInt {
+    CartIconClicked: boolean;
+    setCartIconClicked: (CartIconClicked: boolean) => void;
+    cart: any;
+}
 
- const CartIcon = ({CartIconClicked, setCartIconClicked, cart}) => {
+ const CartIcon = ({CartIconClicked, setCartIconClicked, cart}:CartIconInt) => {
 
     const toggleCartIcon = () => {
         setCartIconClicked(!CartIconClicked)

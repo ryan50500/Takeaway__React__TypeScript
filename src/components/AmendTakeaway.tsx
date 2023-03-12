@@ -2,14 +2,23 @@ import React from 'react'
 import styles from './AmendTakeaway.module.css'
 import {useState, useEffect} from 'react'
 
-const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, setAmendTakeaway}) => {
+interface AmendTakeawayInt {
+    takeawayClickedInCart: any;
+    cart: [];
+    setCart: any;
+    amendTakeaway: boolean;
+    setAmendTakeaway: (amendTakeaway: boolean) => void;
+}
+// setCartIconClicked: (CartIconClicked: boolean) => void;
+
+const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, setAmendTakeaway}:AmendTakeawayInt) => {
 
     // quantity of current dish
     const [dishQuantity, setDishQuantity] = useState(takeawayClickedInCart.quantity)
      // name of of current dish
-     const [dishName, setDishName] = useState(takeawayClickedInCart.takeaway)
+    const [dishName, setDishName] = useState(takeawayClickedInCart.takeaway);
      // total cost of of current dish
-     const [dishTotal, setDishTotal] = useState(takeawayClickedInCart.totalCost)
+    const [dishTotal, setDishTotal] = useState(takeawayClickedInCart.totalCost)
      //  sinlgle price of of current dish
     const [dishPrice, setDishPrice] = useState(takeawayClickedInCart.price)
 
@@ -28,13 +37,13 @@ const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, set
     }, [dishQuantity])
      
 
-    const amendQuantity = (dishName, dishQuantity, dishTotal, dishPrice) => {
+    const amendQuantity = (dishName: string, dishQuantity: number, dishTotal: number, dishPrice: number) => {
         // somehow we need to wait for setDishQuantity state to update before running
         // setCart(prevState => { below
 
-        setCart(prevState => {
+        setCart((prevState:any) => {
             // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
-            return prevState.map((item) => {
+            return prevState.map((item: any) => {
                 // find the object in Cart where 'takeaway' key (item.takeaway) is the same as takeaway passed in,
                 // if so return that object with the updated quantity and totalCost which is passed in
                 // otherwise just return the item with  ": item"

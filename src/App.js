@@ -2,7 +2,7 @@ import Menu from './components/Menu';
 import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
-import AmendTakeaway from './components/AmendTakeaway';
+import AmendTakeaway from './components/AmendTakeaway.tsx';
 import mainStyles from './index.css';
 import {useState} from 'react';
 

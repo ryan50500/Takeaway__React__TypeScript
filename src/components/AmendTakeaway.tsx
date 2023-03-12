@@ -2,16 +2,14 @@ import React from 'react'
 import styles from './AmendTakeaway.module.css'
 import {useState, useEffect} from 'react'
 
-interface AmendTakeawayInt {
+interface AmendTakeawayInterface {
     takeawayClickedInCart: any;
-    cart: [];
     setCart: any;
     amendTakeaway: boolean;
     setAmendTakeaway: (amendTakeaway: boolean) => void;
 }
-// setCartIconClicked: (CartIconClicked: boolean) => void;
 
-const AmendTakeaway = ({takeawayClickedInCart, cart, setCart, amendTakeaway, setAmendTakeaway}:AmendTakeawayInt) => {
+const AmendTakeaway = ({takeawayClickedInCart, setCart, amendTakeaway, setAmendTakeaway}:AmendTakeawayInterface) => {
 
     // quantity of current dish
     const [dishQuantity, setDishQuantity] = useState(takeawayClickedInCart.quantity)

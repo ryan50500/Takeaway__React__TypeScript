@@ -2,29 +2,37 @@ import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
 
-const CartPage = ({CartIconClicked, cart, setCart, amendOrder}) => {
+
+interface CartPageInterface {
+    CartIconClicked: boolean;
+    cart: any;
+    setCart: any;
+    amendOrder: (takeawayClicked: string) => void;
+}
+
+
+const CartPage = ({CartIconClicked, cart, setCart, amendOrder}:CartPageInterface) => {
     
         const [cartTotal, setCartTotal] = useState(0);
 
         useEffect(() => {
                 // showing the total cost on cart page
-                let totalForCart = cart.reduce((sum, item) => sum + item.totalCost, 0);
+                let totalForCart = cart.reduce((sum:number, item:any) => sum + item.totalCost, 0);
                 let newTotalForCart = totalForCart.toFixed(2)
                 setCartTotal(newTotalForCart);
         }, [cart])
 
-        const removeFromCart = (takeaway) => {
-            const newCart = cart.filter(cartItem => cartItem.takeaway !== takeaway);
+        const removeFromCart = (takeaway:string) => {
+            const newCart = cart.filter((cartItem:any) => cartItem.takeaway !== takeaway);
             setCart(newCart);
         }
-
 
     return (
         <>
         <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
                 <h2>Total Cost: £{cartTotal}</h2>
             <div className={styles.cart__wrapper}>
-                {cart.map((cartItems, index) => {
+                {cart.map((cartItems:any, index:number) => {
                     return (
                         <div key={index} className={styles.takeaway__wrapper}>
                             <h3>{cartItems.takeaway}</h3>

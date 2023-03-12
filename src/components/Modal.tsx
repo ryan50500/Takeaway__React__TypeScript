@@ -1,9 +1,16 @@
 import React from 'react'
-import ModalData from '../../src/ModalData'
+import ModalData from '../ModalData'
 import styles from './Modal.module.css'
 import {useState} from 'react';
 
-const Modal = ({modal, index, setModal, addToCart}) => {
+interface ModalInterface {
+    modal: Boolean;
+    index: any;
+    setModal: any;
+    addToCart: any;
+}
+
+const Modal = ({modal, index, setModal, addToCart}:ModalInterface) => {
 
     const [quantity, setQuantity] = useState(1);
 
@@ -41,7 +48,7 @@ const Modal = ({modal, index, setModal, addToCart}) => {
                         // and takeaway image from the  ModalData array.
                         addToCart(ModalData[index].name, quantity, ModalData[index].price * quantity, ModalData[index].image, ModalData[index].price)}>
                         Add to order
-                        <span>£{(parseFloat(ModalData[index].price) * quantity).toFixed(2)}</span>
+                        <span>£{((ModalData[index].price) * quantity).toFixed(2)}</span>
                     </h3>
                 </div>
         </div>

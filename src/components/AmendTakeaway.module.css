@@ -1,3 +1,7 @@
+* {
+  font-family: Arial;
+}
+
 .open {
     display: flex;
     position: absolute;

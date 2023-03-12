@@ -1,17 +1,24 @@
 import React from 'react'
-import Images from '../Images.js'
+import Images from '../Images'
 import styles from './Menu.module.css'
 
+interface menuInterface {
+    modal: Boolean;
+    setModal: any;
+    setIndex: any;
+    CartIconClicked: boolean;
+}
+
 // Use React Memo to stop re-render of component if nothing changes in props
-const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}) => {
-    const openModal = (id) => {
+const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}:menuInterface) => {
+    const openModal = (id:number) => {
         setIndex(id)
         setModal(!modal)
     }
     return (
         <>
         <div className={styles.menu__images + ' ' + (CartIconClicked ? styles.hide__overflow : ' ')}>
-           {Images.map((image) => {
+           {Images.map((image:any) => {
                return (
                 // conditional styling - we check two things  1) the div that has 'bhaji' as the dishName value in the array (Images.map((image)) and 2) window.innerWidth is less than 600 
                 <div key={image.id} className={styles.holder} id={image.dishName} 

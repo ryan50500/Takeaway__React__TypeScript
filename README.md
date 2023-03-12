@@ -1,1 +1,1 @@
-Takeaway project with Create-React-App can be viewed at  https://ryan50500.github.io/Takeaway__React/
+Takeaway project with Create-React-App can be viewed at  https://ryan50500.github.io/Takeaway__React__TypeScript/

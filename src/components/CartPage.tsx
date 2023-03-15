@@ -29,7 +29,7 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder}:CartPageInterface
 
     return (
         <>
-        <div className={styles.cart__page + ' ' + (CartIconClicked ? styles.show : styles.hide)}>
+        <div className={styles.cart__page}>
                 <h2>Total Cost: £{cartTotal}</h2>
             <div className={styles.cart__wrapper}>
                 {cart.map((cartItems:any, index:number) => {

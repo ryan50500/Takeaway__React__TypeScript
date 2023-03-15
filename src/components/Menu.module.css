@@ -10,7 +10,9 @@
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left:0;
     overflow: unset;
 }
 .holder {
@@ -52,6 +54,7 @@
 }
 .hide__overflow {
   overflow: hidden;
+  visibility: hidden;
   position: fixed;
 }
 @media (max-width: 768px) {

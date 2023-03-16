@@ -10,7 +10,6 @@ interface menuInterface {
 }
 
 const Menu = ({modal, setModal, setIndex, CartIconClicked}:menuInterface) => {
-    console.log('dont run')
     const openModal = (id:number) => {
         setIndex(id)
         setModal(!modal)

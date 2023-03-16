@@ -16,9 +16,6 @@ const App = () => {
     const [takeawayClickedInCart, setTakeawayClickedInCart] = useState<number>(0);
 
 
-    console.log('whats going on')
-
-
     const addToCart = (takeaway:string, quantity:number, totalCost:number, takeawayImage:any, price:number) => {
         // if item is already in cart... 
         let takeawayExists = cart.find(cartObjects => cartObjects.takeaway === takeaway);

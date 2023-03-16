@@ -9,8 +9,8 @@ interface menuInterface {
     CartIconClicked: boolean;
 }
 
-// Use React Memo to stop re-render of component if nothing changes in props
-const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}:menuInterface) => {
+const Menu = ({modal, setModal, setIndex, CartIconClicked}:menuInterface) => {
+    console.log('dont run')
     const openModal = (id:number) => {
         setIndex(id)
         setModal(!modal)
@@ -34,6 +34,6 @@ const Menu = React.memo(({modal, setModal, setIndex, CartIconClicked}:menuInterf
         <div className={styles.images__overlay + ' ' + (modal ? ' ' : styles.hide)}></div>
         </>
     )
-});
+};
 
 export default Menu;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './CartIcon.module.css'
+import { Icart } from '../interfaces';
 
 interface CartIconInt {
     CartIconClicked: boolean;

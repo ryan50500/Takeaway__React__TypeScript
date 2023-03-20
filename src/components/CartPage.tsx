@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './CartPage.module.css'
 import {useState, useEffect} from 'react';
 
-
 interface CartPageInterface {
     CartIconClicked: boolean;
     cart: any;
@@ -23,6 +22,7 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder}:CartPageInterface
         }, [cart])
 
         const removeFromCart = (takeaway:string) => {
+            console.log(takeaway)
             const newCart = cart.filter((cartItem:any) => cartItem.takeaway !== takeaway);
             setCart(newCart);
         }

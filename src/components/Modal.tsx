@@ -5,9 +5,10 @@ import {useState} from 'react';
 
 interface ModalInterface {
     modal: Boolean;
-    index: any;
-    setModal: any;
-    addToCart: any;
+    index: number;
+    setModal: (modal: boolean) => void;
+    // addToCart: any;
+    addToCart: (takeaway:string, quantity:number, totalCost:number, takeawayImage:any, price:number) => void;
 }
 
 const Modal = ({modal, index, setModal, addToCart}:ModalInterface) => {

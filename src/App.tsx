@@ -4,20 +4,22 @@ import Modal from './components/Modal';
 import CartIcon from './components/CartIcon';
 import CartPage from './components/CartPage';
 import AmendTakeaway from './components/AmendTakeaway';
+import { Icart, ITakeawayClicked } from './interfaces';
 import {useState} from 'react';
 
 
 const App = () => {
-    const [modal, setModal] = useState<any>(false);
+
+    const [modal, setModal] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0);
     const [CartIconClicked, setCartIconClicked] = useState<boolean>(false);
-    const [cart, setCart] = useState<any[]>([])
-    const [amendTakeaway, setAmendTakeaway] = useState<any>(false);
-    const [takeawayClickedInCart, setTakeawayClickedInCart] = useState<number>(0);
+    const [cart, setCart] = useState<Icart[]>([])
+    const [amendTakeaway, setAmendTakeaway] = useState<boolean>(false);
+    const [takeawayClickedInCart, setTakeawayClickedInCart] = useState<ITakeawayClicked>(null);
 
     const addToCart = (takeaway:string, quantity:number, totalCost:number, takeawayImage:any, price:number) => {
         // if item is already in cart... 
-        let takeawayExists = cart.find(cartObjects => cartObjects.takeaway === takeaway);
+        let takeawayExists = cart.find(cartObject => cartObject.takeaway === takeaway);
         if (takeawayExists) {
             
             setCart((prevState:any) => {
@@ -44,7 +46,7 @@ const App = () => {
             // console.log(takeawayClicked)
             setAmendTakeaway(!amendTakeaway);
             // get matching takeaway that is passed in and loop through cart
-             let takeawayClickedInCart = cart.find(cartObjects => cartObjects.takeaway === takeawayClicked);
+             let takeawayClickedInCart = cart.find(cartObject => cartObject.takeaway === takeawayClicked);
             //  console.log(takeawayClickedInCart);
             setTakeawayClickedInCart(takeawayClickedInCart);
         }

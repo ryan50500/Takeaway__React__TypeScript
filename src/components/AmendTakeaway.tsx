@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './AmendTakeaway.module.css'
 import {useState, useEffect} from 'react'
+import { Icart, ITakeawayClicked } from '../interfaces';
 
 interface AmendTakeawayInterface {
-    takeawayClickedInCart: any;
+    takeawayClickedInCart: ITakeawayClicked;
     setCart: any;
     amendTakeaway: boolean;
     setAmendTakeaway: (amendTakeaway: boolean) => void;

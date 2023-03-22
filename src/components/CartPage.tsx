@@ -32,6 +32,7 @@ const CartPage = ({CartIconClicked, cart, setCart, amendOrder}:CartPageInterface
         <div className={styles.cart__page}>
                 <h2>Total Cost: £{cartTotal}</h2>
             <div className={styles.cart__wrapper}>
+                {cart.length === 0 && <div className={styles.cart__empty}>Cart is empty</div>}
                 {cart.map((cartItems:any, index:number) => {
                     return (
                         <div key={index} className={styles.takeaway__wrapper}>

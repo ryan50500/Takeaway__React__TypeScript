@@ -27,6 +27,9 @@
     width: 101px;
     background-color: #fb6100;
 }
+.cart__icon__text:hover {
+    cursor: pointer;
+}
 
 .cart__icon__removed {
     background-color: transparent;

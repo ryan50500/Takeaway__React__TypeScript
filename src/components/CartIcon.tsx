@@ -14,7 +14,8 @@ interface CartIconInt {
         setCartIconClicked(!CartIconClicked)
     }
     return (
-        <div>
+        <div className="cart__icon__wrap">
+            {!CartIconClicked && <div className="cart__icon__text" onClick={toggleCartIcon}>View Cart</div>}
             {/* how to add multiple styles
             <div className={ `${styles.cart__icon} ${styles.cart__icon__orange}` } /> */}
             <div className={styles.cart__icon + ' ' + (CartIconClicked ? styles.cart__icon__removed : ' ')} onClick={toggleCartIcon}>

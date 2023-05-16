@@ -1,17 +1,17 @@
 import React from 'react'
 import ModalData from '../ModalData'
 import styles from './Modal.module.css'
-import {useState} from 'react';
+import { useState } from 'react';
 
 interface ModalInterface {
     modal: Boolean;
     index: number;
     setModal: (modal: boolean) => void;
     // addToCart: any;
-    addToCart: (takeaway:string, quantity:number, totalCost:number, takeawayImage:any, price:number) => void;
+    addToCart: (takeaway: string, quantity: number, totalCost: number, takeawayImage: any, price: number) => void;
 }
 
-const Modal = ({modal, index, setModal, addToCart}:ModalInterface) => {
+const Modal = ({ modal, index, setModal, addToCart }: ModalInterface) => {
 
     const [quantity, setQuantity] = useState(1);
 
@@ -29,29 +29,29 @@ const Modal = ({modal, index, setModal, addToCart}:ModalInterface) => {
         // when modal is closed by user, set the quantity back to 1
         setQuantity(1);
     }
-    
+
     return (
         <div className={styles.modal + ' ' + (modal ? styles.visible : ' ')}>
-                <div className={styles.close__modal} onClick={() => closeModal()}>
-                    <div className={styles.style__modal}>
-                        <div className={styles.style__modal__cross}></div>
-                    </div>
+            <div className={styles.close__modal} onClick={() => closeModal()}>
+                <div className={styles.style__modal}>
+                    <div className={styles.style__modal__cross}></div>
                 </div>
-                <div className={styles.modal__info}>
-                    <h2>{ModalData[index].name}</h2>
-                    <h2>{ModalData[index].description}</h2>
-                    <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={()=>decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={()=>increaseQuantity()}>+</div></div>
-                    <h3 className={styles.modal__cart} onClick={() => 
-                        // we pass in three arguments to the addToCart function... 
-                        // the name of the current index from ModalData array we import,
-                        // quantity from the  ModalData array,
-                        // price from the  ModalData array,
-                        // and takeaway image from the  ModalData array.
-                        addToCart(ModalData[index].name, quantity, ModalData[index].price * quantity, ModalData[index].image, ModalData[index].price)}>
-                        Add to order
+            </div>
+            <div className={styles.modal__info}>
+                <h2>{ModalData[index].name}</h2>
+                <h2>{ModalData[index].description}</h2>
+                <div className={styles.modal__quantity}><div className={styles.decrease__amount} onClick={() => decreaseQuantity()}>-</div><div>{quantity}</div><div className={styles.increase__amount} onClick={() => increaseQuantity()}>+</div></div>
+                <h3 className={styles.modal__cart} onClick={() =>
+                    // we pass in three arguments to the addToCart function... 
+                    // the name of the current index from ModalData array we import,
+                    // quantity from the  ModalData array,
+                    // price from the  ModalData array,
+                    // and takeaway image from the  ModalData array.
+                    addToCart(ModalData[index].name, quantity, ModalData[index].price * quantity, ModalData[index].image, ModalData[index].price)}>
+                    Add to order
                         <span>£{((ModalData[index].price) * quantity).toFixed(2)}</span>
-                    </h3>
-                </div>
+                </h3>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AmendTakeaway.module.css'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { Icart, ITakeawayClicked } from '../interfaces';
 
 interface AmendTakeawayInterface {
@@ -10,43 +10,37 @@ interface AmendTakeawayInterface {
     setAmendTakeaway: (amendTakeaway: boolean) => void;
 }
 
-const AmendTakeaway = ({takeawayClickedInCart, setCart, amendTakeaway, setAmendTakeaway}:AmendTakeawayInterface) => {
+const AmendTakeaway = ({ takeawayClickedInCart, setCart, amendTakeaway, setAmendTakeaway }: AmendTakeawayInterface) => {
 
     // quantity of current dish
     const [dishQuantity, setDishQuantity] = useState(takeawayClickedInCart.quantity)
-     // name of of current dish
+    // name of of current dish
     const [dishName, setDishName] = useState(takeawayClickedInCart.takeaway);
-     // total cost of of current dish
+    // total cost of of current dish
     const [dishTotal, setDishTotal] = useState(takeawayClickedInCart.totalCost)
-     //  sinlgle price of of current dish
+    //  sinlgle price of of current dish
     const [dishPrice, setDishPrice] = useState(takeawayClickedInCart.price)
 
-
-     console.log(dishName);
-     console.log(dishQuantity);
-     console.log(dishTotal);
-
-
-     const increaseQuantity = () => {
+    const increaseQuantity = () => {
         setDishQuantity(dishQuantity + 1)
     }
 
-     useEffect(() => {
+    useEffect(() => {
         amendQuantity(dishName, dishQuantity, dishTotal, dishPrice);
     }, [dishQuantity])
-     
+
 
     const amendQuantity = (dishName: string, dishQuantity: number, dishTotal: number, dishPrice: number) => {
         // somehow we need to wait for setDishQuantity state to update before running
         // setCart(prevState => { below
 
-        setCart((prevState:any) => {
+        setCart((prevState: any) => {
             // Loop over cart (prevState gets whatever is already in the cart and starts to loop over it with map)
             return prevState.map((item: any) => {
                 // find the object in Cart where 'takeaway' key (item.takeaway) is the same as takeaway passed in,
                 // if so return that object with the updated quantity and totalCost which is passed in
                 // otherwise just return the item with  ": item"
-                return item.takeaway === dishName ? {...item, quantity: dishQuantity, totalCost: dishQuantity * dishPrice} : item
+                return item.takeaway === dishName ? { ...item, quantity: dishQuantity, totalCost: dishQuantity * dishPrice } : item
             })
         })
     }
@@ -65,17 +59,17 @@ const AmendTakeaway = ({takeawayClickedInCart, setCart, amendTakeaway, setAmendT
             <div className={styles.open}>
                 {/* modal cross */}
                 <div className={styles.modal}>
-                    <div className={styles.close__modal} onClick={()=>setAmendTakeaway(!amendTakeaway)}>
+                    <div className={styles.close__modal} onClick={() => setAmendTakeaway(!amendTakeaway)}>
                         <div className={styles.style__modal}>
                             <div className={styles.style__modal__cross}></div>
                         </div>
                     </div>
                 </div>
                 <h2>{takeawayClickedInCart.takeaway}</h2>
-                    <div className={styles.quantity__buttons}>
-                        <div onClick={()=>decreaseQuantity()}>-</div>
-                        <div onClick={()=>increaseQuantity()}>+</div>
-                    </div>
+                <div className={styles.quantity__buttons}>
+                    <div onClick={() => decreaseQuantity()}>-</div>
+                    <div onClick={() => increaseQuantity()}>+</div>
+                </div>
                 <h2>{dishQuantity}</h2>
             </div>
         </>
